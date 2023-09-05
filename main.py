@@ -6,6 +6,7 @@ Sineokaya Anastasia
 import RU_LOCAL as RU
 text = input(RU.intro)
 words = 0
+print(text)
 
 text = text.split(' ')
 print(text)
