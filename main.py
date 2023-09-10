@@ -28,10 +28,12 @@ print(count_vowels, 'слогов')
 # count_vowels = text_letters.count('a') + text_letters.count('e') + text_letters.count('i') + text_letters.count('o') + text_letters.count('u') + text_letters.count('y')
 # print(count_vowels, 'слогов')
 
+
+mid_lenght = text_letters.count('.') + text_letters.count('?') + text_letters.count('!')
+
 ASL = words / mid_lenght
 ASW = count_vowels / words
 
-mid_lenght = text_letters.count('.') + text_letters.count('?') + text_letters.count('!')
 print('Слов:', words)
 print('Слогов:', count_vowels)
 print('Средняя длина предложения в словах:', ASL)
