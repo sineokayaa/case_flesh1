@@ -4,7 +4,7 @@ Varfolomeeva Viktoria
 Sineokaya Anastasia
 """
 import RU_LOCAL as RU
-
+from textblob import TextBlob
 
 
 text = input(RU.intro)
@@ -32,3 +32,4 @@ print('Слов:', words)
 print('Слогов:', count_vowels)
 print('Средняя длина предложения в словах:', words/mid_lenght)
 print('Средняя длина слова в слогах:', count_vowels/words)
+
