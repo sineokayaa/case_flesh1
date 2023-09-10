@@ -5,6 +5,8 @@ Sineokaya Anastasia
 """
 import RU_LOCAL as RU
 
+
+
 text = input(RU.intro)
 text_letters = text
 words = 0
@@ -18,11 +20,18 @@ for i in range(len(text)):
         words += 1
 print(words)
 
-vowels = ['a', 'y', 'i', 'o', ' e']
-count_w = 0
+text_letters = text_letters.lower()
+print(text_letters)
+count_vowels = text_letters.count('а') + text_letters.count('о') + text_letters.count('у') + text_letters.count('ы') + text_letters.count('э') + text_letters.count('е') + text_letters.count('ё') + text_letters.count('и') + text_letters.count('ю') + text_letters.count('я')
+print(count_vowels, 'слогов')
+#count_vowels = text_letters.count('a') + text_letters.count('e') + text_letters.count('i') + text_letters.count('o') + text_letters.count('u') + text_letters.count('y')
+#print(count_vowels, 'слогов')
 
-for i in range(len(text_letters)):
-    if text_letters[i] in vowels:
-        count_w += 1
-print(count_w)
+mid_lenght = text_letters.count('.') + text_letters.count('?') + text_letters.count('!')
+print('Слов:', words)
+print('Слогов:', count_vowels)
+print('Средняя длина предложения в словах:', words/mid_lenght)
+print('Средняя длина слова в слогах:', count_vowels/words)
+
+
 
