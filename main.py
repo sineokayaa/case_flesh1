@@ -5,9 +5,12 @@ Sineokaya Anastasia
 """
 import RU_LOCAL as RU
 from textblob import TextBlob
+from deep_translator import GoogleTranslator
 
 text = input(RU.intro)
 text_letters = text
+text_orig = TextBlob(text)
+lang = ''
 words = 0
 
 text = text.split(' ')
@@ -34,7 +37,35 @@ mid_lenght = text_letters.count('.') + text_letters.count('?') + text_letters.co
 ASL = words / mid_lenght
 ASW = count_vowels / words
 
+if lang == 'ru':
+    FRE = 206.835 - 1.3 * ASL - 60.1 * ASW
+else:
+    FRE = 206.835 - 1.015 * ASL - 84.6 * ASW
+
+if FRE > 80:
+    result = RU.FRE_junior
+elif FRE > 50:
+    result = RU.FRE_pupils
+elif FRE > 25:
+    result = RU.FRE_students
+else:
+    result = RU.FRE_graduate
+
+pol = text_orig.sentiment.polarity
+if pol <= -1/3:
+    pol_ans = RU.pol_negative
+elif pol <= 1/3:
+    pol_ans = RU.pol_neutral
+else:
+    pol_ans = RU.pol_positive
+
+sub = str(text_orig.sentiment.subjectivity * 100) + '%'
+
 print('Слов:', words)
 print('Слогов:', count_vowels)
 print('Средняя длина предложения в словах:', ASL)
 print('Средняя длина слова в слогах:', ASW)
+print(RU.FRE, FRE)
+print(result)
+print(RU.pol, pol_ans)
+print(RU.sub, sub)
