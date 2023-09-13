@@ -51,7 +51,9 @@ elif FRE > 25:
 else:
     result = RU.FRE_graduate
 
-pol = text_orig.sentiment.polarity
+translated = GoogleTranslator(source='auto', target='en').translate(text_orig)
+
+pol = translated.sentiment.polarity
 if pol <= -1/3:
     pol_ans = RU.pol_negative
 elif pol <= 1/3:
@@ -59,7 +61,7 @@ elif pol <= 1/3:
 else:
     pol_ans = RU.pol_positive
 
-sub = str(text_orig.sentiment.subjectivity * 100) + '%'
+sub = str(translated.sentiment.subjectivity * 100) + '%'
 
 print('Слов:', words)
 print('Слогов:', count_vowels)
