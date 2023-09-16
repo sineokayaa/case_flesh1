@@ -1,7 +1,7 @@
 """
 Group:
 Varfolomeeva Viktoria 60
-Sineokaya Anastasia
+Sineokaya Anastasia 50
 """
 import RU_LOCAL as RU
 from textblob import TextBlob
