@@ -11,6 +11,7 @@ text = input(RU.INTRO)
 text_letters = text
 text_orig = text
 lang = ''
+count_vowels = 0
 
 text = text.split(' ')
 count_words = len(text)
