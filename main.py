@@ -10,8 +10,20 @@ from deep_translator import GoogleTranslator
 text = input(RU.INTRO)
 text_letters = text
 text_orig = text
-lang = ''
 count_vowels = 0
+count_alpha = 0
+summ_ord = 0
+
+for i in range(len(text)):
+    if text[i].isalpha():
+        count_alpha += 1
+        summ_ord += ord(text[i])
+
+average = summ_ord / count_alpha
+if average <= 122:
+    lang = 'eng'
+else:
+    lang = 'ru'
 
 text = text.split(' ')
 count_words = len(text)
