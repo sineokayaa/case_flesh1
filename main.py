@@ -68,6 +68,7 @@ else:
 
 sub = str(translated.sentiment.subjectivity * 100) + '%'
 
+print(RU.SENTENCES, count_sentences)
 print(RU.WORDS, count_words)
 print(RU.SYLLABLES, count_vowels)
 print(RU.AVERAGE_S_L, ASL)
