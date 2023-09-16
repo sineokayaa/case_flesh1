@@ -34,7 +34,8 @@ if lang == 'ru':
         'ы') + text_letters.count('э') + text_letters.count('е') + text_letters.count('ё') + text_letters.count(
         'и') + text_letters.count('ю') + text_letters.count('я')
 elif lang == 'eng':
-    count_vowels = text_letters.count('a') + text_letters.count('e') + text_letters.count('i') + text_letters.count('o') + text_letters.count('u') + text_letters.count('y')
+    count_vowels = text_letters.count('a') + text_letters.count('e') + text_letters.count('i')\
+                   + text_letters.count('o') + text_letters.count('u') + text_letters.count('y')
 
 count_sentences = text_letters.count('.') + text_letters.count('?') + text_letters.count('!')
 
