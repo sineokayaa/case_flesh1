@@ -1,6 +1,6 @@
 """
 Group:
-Varfolomeeva Viktoria
+Varfolomeeva Viktoria 60
 Sineokaya Anastasia
 """
 import RU_LOCAL as RU
