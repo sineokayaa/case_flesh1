@@ -11,31 +11,22 @@ text = input(RU.intro)
 text_letters = text
 text_orig = TextBlob(text)
 lang = ''
-words = 0
 
 text = text.split(' ')
-print(text)
-print(len(text))
-
-for i in range(len(text)):
-    if text[i] != '':
-        words += 1
-print(words)
+count_words = len(text)
 
 text_letters = text_letters.lower()
-print(text_letters)
-count_vowels = text_letters.count('а') + text_letters.count('о') + text_letters.count('у') + text_letters.count(
-    'ы') + text_letters.count('э') + text_letters.count('е') + text_letters.count('ё') + text_letters.count(
-    'и') + text_letters.count('ю') + text_letters.count('я')
-print(count_vowels, 'слогов')
-# count_vowels = text_letters.count('a') + text_letters.count('e') + text_letters.count('i') + text_letters.count('o') + text_letters.count('u') + text_letters.count('y')
-# print(count_vowels, 'слогов')
+if lang == 'ru':
+    count_vowels = text_letters.count('а') + text_letters.count('о') + text_letters.count('у') + text_letters.count(
+        'ы') + text_letters.count('э') + text_letters.count('е') + text_letters.count('ё') + text_letters.count(
+        'и') + text_letters.count('ю') + text_letters.count('я')
+elif lang == 'eng':
+    count_vowels = text_letters.count('a') + text_letters.count('e') + text_letters.count('i') + text_letters.count('o') + text_letters.count('u') + text_letters.count('y')
 
+count_sentences = text_letters.count('.') + text_letters.count('?') + text_letters.count('!')
 
-mid_lenght = text_letters.count('.') + text_letters.count('?') + text_letters.count('!')
-
-ASL = words / mid_lenght
-ASW = count_vowels / words
+ASL = count_words / count_sentences
+ASW = count_vowels / count_words
 
 if lang == 'ru':
     FRE = 206.835 - 1.3 * ASL - 60.1 * ASW
@@ -63,10 +54,10 @@ else:
 
 sub = str(translated.sentiment.subjectivity * 100) + '%'
 
-print('Слов:', words)
-print('Слогов:', count_vowels)
-print('Средняя длина предложения в словах:', ASL)
-print('Средняя длина слова в слогах:', ASW)
+print(RU.WORDS, count_words)
+print(RU.SYLLABLES, count_vowels)
+print(RU.AVERAGE_S_L, ASL)
+print(RU.AVERAGE_S_W, ASW)
 print(RU.FRE, FRE)
 print(result)
 print(RU.pol, pol_ans)
